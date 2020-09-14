@@ -1,0 +1,14 @@
+{
+  "name": "gdp-document",
+  "version": "1.0.0",
+  "author": "陈文中 <560180@gree.com.cn>",
+  "license": "BSD-3-Clause",
+  "scripts": {
+    "dev": "vuepress dev docs",
+    "build": "vuepress build docs"
+  },
+  "dependencies": {
+    "@vuepress/theme-vue": "^1.5.4",
+    "vuepress": "^1.5.4"
+  }
+}
