@@ -5,7 +5,8 @@
   "license": "BSD-3-Clause",
   "scripts": {
     "dev": "vuepress dev docs",
-    "build": "vuepress build docs"
+    "build": "vuepress build docs",
+    "deploy-gh": "GH=1 yarn docs:build && bash scripts/deploy-gh.sh"
   },
   "dependencies": {
     "@vuepress/theme-vue": "^1.5.4",

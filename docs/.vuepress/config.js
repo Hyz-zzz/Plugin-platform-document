@@ -3,6 +3,7 @@ module.exports = {
   title: 'Plugin自动化开发平台',
   description: '提供业务插件开发最佳解决方案',
   theme: '@vuepress/vue',
+  base: '/Plugin-platform-document/',
   themeConfig: {
     lastUpdated: 'Last Updated',
     sidebarDepth: 4, // e'b将同时提取markdown中h2 和 h3 标题，显示在侧边栏上。
@@ -70,7 +71,9 @@ module.exports = {
           children: [
             ['/Develop/Template/Preface', '介绍'],
             ['/Develop/Template/Structu', '目录结构'],
-            ['/', '基本配置'],
+            ['/Develop/Template/Router', '路由'],
+            ['/Develop/Template/State', '状态管理'],
+            ['/Develop/Template/Logic', '互斥关系'],
           ],
           collapsable: false
         }
