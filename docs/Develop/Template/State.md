@@ -5,36 +5,26 @@
 ### model
 
 - Type: `Object`
+- Description：`model`包含了一个功能的所有定义
 
-model包含了一个功能的所有定义。
-
-model的结构：
-
-``` js
+``` js {2}
 {
-  "identifier": String, // 唯一标识符。
-  "json": String, // 状态字段名。
-  "type": String, //  类型，用于布局的时候区分。
-  "statusDefine": Object, // status的定义集合。
-  "map": Object // status的指向关系集合。
+  "order": [ statusName1, statusName2, ... ], // 状态的变更顺序，被map替代，已废弃
+  "identifier": String, // 唯一标识符
+  "json": String, // 状态字段名
+  "type": String, //  类型
+  "statusDefine": { statusName1: status1, statusName2: status2, ... }, // status合集，以statusName作为属性名
+  "map": { statusName1: statusName2, statusName2: statusName3, ... } // status指向关系合集
 }
 ```
-  
-**参考**
-
-- [statusDefine](../guide/deploy.md#github-pages)
-- [map](../guide/assets.md#base-url)
 
 ### status
 
 - Type: `Object`
-
-功能的抽象状态定义，作为statusDefine的对象属性，拥有对应的statusName作为key值。
-
-status的结构：
+- Description：功能的抽象状态定义，作为`statusDefine`的属性，拥有对应的`statusName`作为属性名
 
 ``` js
-"statusName": {
+statusName: {
   "name": String, // 名称，一版不直接使用
   "value": Number|String, // 状态值
   "isCheck": Boolean, // 是否检查互斥
@@ -43,22 +33,49 @@ status的结构：
   // 可选，对应图标
   "icon": {
     "key": String,
-    "type": "on"|"off"
+    "type": String
   },
   // 可选，对应小图标
   "miniIcon": {
     "key": String
   },
-  "hideArr": [String], // 可选，隐藏的state的key值
-  "excludeArr": [String] // 可选，排斥的state的key值
+  "hideArr": [stateName1, stateName2, ...], // 可选，隐藏的stateName
+  "excludeArr": [stateName1, stateName2, ...] // 可选，排斥的stateName
 }
 ```
 
-### state
+### statusName
 
 - Type: `String`
+- Description: `status`的属性名
+- Rule:
+  1. 不可重复
+  2. `statusDefine`下必须存在的`statusName`: `defalut`, `undefined`
+  3. 新增的`statusName`值为`status_${num}`，`num`从1开始依次递增，如：`status_1`、`status_2`
 
+### state
+
+- Type: `Object`
+- Description：功能的具象状态定义，拥有对应的`stateName`作为属性名
+- Rule：指向对应的`status`
+  
+### stateName
+
+- Type: `String`
+- Description：`state`的属性名
+- Rule：值为`${identifier}_${statusName}`，如：`Pow_default`、`Pow_status_1`
+
+**参考:**
+
+- [identifier来源：model](#model)
+- [statusName](#statusname)
 
 ## API
 
-## 机制
+## 运行机制
+
+### 什么是状态
+
+### 状态与数据的双向绑定
+
+### 
