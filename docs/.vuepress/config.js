@@ -51,7 +51,7 @@ module.exports = {
           children: [
             ['/', '介绍'],
             ['/', '接入流程'],
-            ['/', '基本配置'],
+            ['/', '基本配置']
           ],
           collapsable: false
         }
@@ -62,7 +62,7 @@ module.exports = {
           children: [
             ['/Develop/Platform/Preface', '介绍'],
             ['/', '目录结构'],
-            ['/', '基本配置'],
+            ['/', '基本配置']
           ],
           collapsable: false
         },
@@ -74,6 +74,8 @@ module.exports = {
             ['/Develop/Template/Router', '路由'],
             ['/Develop/Template/State', '状态管理'],
             ['/Develop/Template/Logic', '互斥关系'],
+            ['/Develop/Template/Customize', '自定义函数'],
+            ['/Develop/Template/Component', '组件开发']
           ],
           collapsable: false
         }
@@ -83,7 +85,7 @@ module.exports = {
           title: '用户相关',
           children: [
             ['/', '注册'],
-            ['/', '登录'],
+            ['/', '登录']
           ],
           collapsable: false
         },
@@ -95,7 +97,7 @@ module.exports = {
             ['/', '保存所有更改'],
             ['/', '保存某一更改'],
             ['/', '添加新功能'],
-            ['/', '删除某一功能'],
+            ['/', '删除某一功能']
           ],
           collapsable: false
         },
@@ -107,25 +109,26 @@ module.exports = {
             ['/', '删除某一设备'],
             ['/', '保存所有更改'],
             ['/', '删除某一功能'],
-            ['/', '保存并下载配置'],
+            ['/', '保存并下载配置']
           ],
           collapsable: false
         },
         {
           title: '插件相关',
-          children: [
-            ['/', '获取插件配置']
-          ],
+          children: [['/', '获取插件配置']],
           collapsable: false
-        },
-      ],
-    },
+        }
+      ]
+    }
   },
   plugins: [
-    ['container', {
-      type: 'vue',
-      before: '<pre class="vue-container"><code>',
-      after: '</code></pre>'
-    }],
+    [
+      'container',
+      {
+        type: 'vue',
+        before: '<pre class="vue-container"><code>',
+        after: '</code></pre>'
+      }
+    ]
   ]
 };
