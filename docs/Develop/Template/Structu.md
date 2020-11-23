@@ -1,38 +1,32 @@
 # 目录结构
 
 ::: vue
-├─public
+├─public _(**公用资源**)_
 ├─src
-│   ├─assets
+│   ├─assets _(**项目资源**)_
 │   │  ├─iconfont
 │   │  ├─img
 │   │  ├─js
 │   │  └─scss
 │   ├─`components` _(**业务组件**)_
-│   ├─config
-│   ├─i18n
-│   ├─`logic` _(**状态机配置**)_
-│   │  ├─`customize.js` _(**自定义函数**)_
-│   │  ├─`define.js` _(**状态机API**)_
-│   │  ├─`port.js` _(**数据接口**)_
-│   │  ├─`watch.js` _(**状态监听**)_
-│   │  └─`work.js` _(**业务逻辑**)_
-│   ├─mixins
-│   │  ├─ _**config**_ _(**已废弃，抽离的组件公用配置项**)_
-│   │  └─utils
-│   ├─store
-│   ├─utils
-│   └─views
+│   ├─config  _(**xml文件，与原生规定的传入字段**)_
+│   ├─i18n  _(**翻译表**)_
+│   ├─mixins _(**vue全局混入文件，不推荐使用**)_
+│   ├─store _(**业务与状态机的数据交互**)_
+│   │  ├─control _(**业务模块**)_
+│   │  └─machine _(**状态机模块**)_
+│   ├─utils _(**公用方法**)_
+│   └─views _(**页面**)_
 │       └─`functionPage` _(**二级页面**)_
 └─package.json
 :::
 
 ::: tip 注意
-functionPage内页面一般作为配置项插入
+`functionPage`内页面一般作为JSON配置项插入
 :::
 
 **参考:**
 
 - [状态管理](./State.md)
 - [路由](./Router.md)
-- [组件开发](./Component.md)
+- [业务组件开发](./Component.md)
