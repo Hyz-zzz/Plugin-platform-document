@@ -73,8 +73,8 @@ module.exports = {
             ['/Develop/Template/Structu', '目录结构'],
             ['/Develop/Template/Router', '路由'],
             ['/Develop/Template/State', '状态机设计模式'],
+            ['/Develop/Template/Logic', '互斥关系处理'],
             ['/Develop/Template/Api', 'API'],
-            ['/Develop/Template/Logic', '互斥关系'],
             ['/Develop/Template/Customize', '自定义函数'],
             ['/Develop/Template/Component', '组件开发']
           ],
