@@ -124,7 +124,7 @@ stateQueue: [
 队列创建时，使用ES6的`Object.defineProperty`改写了`getter`，对队列使用`push`推入事件时，会触发事件的执行：
 
 ```js
-function creatQueue({ dispatch }) {
+function creatQueue(context) {
   // 创建队列数组
   let queue = [];
   Object.defineProperty(this, 'stateQueue', {
@@ -133,7 +133,7 @@ function creatQueue({ dispatch }) {
       // setTimeout把方法放到下一个宏任务，保证队列更新
       setTimeout(() => {
         // 如果队列中存在事件，则执行
-        queue.length && dispatch(types.RUN_EVENT, queue); // RUN_EVENT: 事件执行方法
+        queue.length && RUN_EVENT(context, queue); // RUN_EVENT: 事件执行方法
       }, 0);
       return queue;
     },
