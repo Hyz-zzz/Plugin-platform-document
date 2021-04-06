@@ -47,7 +47,7 @@ function eventHandler(context, { identifier, currentStatusName, nextStatusName }
 | 示例 | { commit, dispatch, ... } | status_1 | status_2 |
 | 备注 | vuex的执行上下文 | 当前statusName(现态) | 即将进入的statusName(次态) |
 
-### 案例
+### 示例
 
 以自清洁作为例子，实现不同状态下弹出不同提示
 
@@ -83,4 +83,14 @@ export const customizeFunction = {
 
 ## 自定义初始化函数
 
+在状态机初始化时运行一次
 
+### 示例
+
+``` js
+export const customizeInit = {
+  AppTimer: () => {
+    console.log('初始化时打印这句话');
+  }
+};
+```
