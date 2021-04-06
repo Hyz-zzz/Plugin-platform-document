@@ -53,6 +53,12 @@ stateMachine.checkLogic('Pow'); // 检查并执行identifier为'Pow'的model的�
 
 `store/machine/getters.js`里定义了许多可供业务使用的API：
 
+### fakeStatusMap
+
+- **Description**: 根据`identifier`获取`伪现态`（没有经过隐藏关系处理，不是真正的`现态`）的相关信息
+- **Type**: { Object }
+- **Example**: { identifier: { statusName, stateName, status } }
+
 ### funcDefine_active
 
 - **Description**: 定义为**显性功能**的`model`合集
@@ -136,6 +142,12 @@ stateMachine.checkLogic('Pow'); // 检查并执行identifier为'Pow'的model的�
 - **Description**: 根据`identifier`与`statusName`获取`status`的相关信息
 - **Type**: { Object }
 - **Example**: { identifier: { statusName: { statusName, status, json, setData, customize } } }
+
+### valToFakeStatusName
+
+- **Description**: 根据`identifier`与`model.json`的值`value`获取`statusName`，没有经过隐藏关系处理
+- **Type**: { Object }
+- **Example**: { identifier: { value: statusName } }
 
 ### valToStatusName
 

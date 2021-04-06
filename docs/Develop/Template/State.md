@@ -121,7 +121,7 @@ stateQueue: [
 
 #### 事件队列推入新事件
 
-队列创建时，使用ES6的`Object.defineProperty`改写了`getter`，对队列使用`push`推入事件时，会触发事件的执行：
+队列创建时，使用ES5的`Object.defineProperty`改写了`getter`，对队列使用`push`推入事件时，会触发事件的执行：
 
 ```js
 function creatQueue(context) {

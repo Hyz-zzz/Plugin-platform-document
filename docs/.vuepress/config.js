@@ -9,6 +9,7 @@ module.exports = {
     sidebarDepth: 4, // e'b将同时提取markdown中h2 和 h3 标题，显示在侧边栏上。
     // 顶部导航栏
     nav: [
+      { text: '影子设备', link: '/MQTT/' },
       { text: '指南', link: '/Guide/' },
       { text: '设备接入', link: '/Access/' },
       { text: '开发文档', link: '/Develop/' },
@@ -25,6 +26,23 @@ module.exports = {
     ],
     // 侧边栏分组
     sidebar: {
+      '/MQTT/': [
+        {
+          title: '相关接口',
+          path: '/MQTT/Interface',
+          collapsable: false
+        },
+        {
+          title: '案例',
+          path: '/MQTT/Example',
+          collapsable: false
+        },
+        {
+          title: '接入须知',
+          path: '/MQTT/Tip',
+          collapsable: false
+        }
+      ],
       '/Guide/': [
         {
           title: '指南',
