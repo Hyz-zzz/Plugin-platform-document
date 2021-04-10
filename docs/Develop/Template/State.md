@@ -164,3 +164,16 @@ function RUN_EVENT(context, stateQueue) {
 ### 工作流
 
 ![State Machine Workflow](./../../.vuepress/public/img/state_work.png)
+
+- 组件通过状态机(`stateMachine`)的触发事件方法(`toStatus`、`nextStatus`、`excludeStatus`)生成事件，通过`push`将事件提交到队列(`stateQueue`)中
+- `stateQueue`的`get`方法已被改写，当队列不为空时，触发`RUN_EVENT`事件
+
+``` js
+queue.length && dispatch(types.RUN_EVENT, queue, { root: true });
+```
+
+- 运行结果通过`STATE_MACHINE_INTERFACE`输出
+
+``` js
+dispatch(types.STATE_MACHINE_INTERFACE, { data: setData, type: 'output', identifier, from: currentStatusName, to: nextStatusName }, { root: true })
+```
